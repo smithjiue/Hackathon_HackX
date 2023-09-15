@@ -58,15 +58,15 @@ REST_FRAMEWORK = {
 DJOSER = {
     'LOGIN_FIELD': 'email',                         #Defaul Username
     'USER_CREATE_PASSWORD_RETYPE': True,            #Require additional field of confirm password
-    'USERNAME_CHANGED_EMAIL_CONFIRMATION': True,    #Sends email when  username is changed
+    # 'USERNAME_CHANGED_EMAIL_CONFIRMATION': True,    #Sends email when  username is changed
     'PASSWORD_CHANGED_EMAIL_CONFIRMATION': True,    #Sends email when  password is changed
-    'SEND_CONFIRMATION_EMAIL': True,
-    'SET_USERNAME_RETYPE': True,                       #Require additional field of confirm password
+    # 'SEND_CONFIRMATION_EMAIL': True,
+    # 'SET_USERNAME_RETYPE': True,                       #Require additional field of confirm password
     'SET_PASSWORD_RETYPE': True,
-    'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
+    # 'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
     # 'USERNAME_RESET_CONFIRM_URL': 'email/reset/confirm/{uid}/{token}',
-    'ACTIVATION_URL': 'activate/{uid}/{token}',
-    'SEND_ACTIVATION_EMAIL': True,
+    # 'ACTIVATION_URL': 'activate/{uid}/{token}',
+    # 'SEND_ACTIVATION_EMAIL': True,
     # 'SOCIAL_AUTH_TOKEN_STRATEGY': 'djoser.social.token.jwt.TokenStrategy',
     # 'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS': ['http://localhost:8000/google', 'http://localhost:8000/facebook'],
     'SERIALIZERS': {
@@ -124,23 +124,23 @@ WSGI_APPLICATION = 'inventry.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('MY_SQL_DB_NAME'),
-        'USER': os.environ.get('MY_SQL_USER'),
-        'PASSWORD': os.environ.get('MY_SQL_PASSWORD'),
-        'HOST': os.environ.get('MY_SQL_HOST'),
-        'PORT': os.environ.get('MY_SQL_PORT'),
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME':os.path.join(BASE_DIR, 'db.sqlite3'),
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': os.environ.get('MY_SQL_DB_NAME'),
+#         'USER': os.environ.get('MY_SQL_USER'),
+#         'PASSWORD': os.environ.get('MY_SQL_PASSWORD'),
+#         'HOST': os.environ.get('MY_SQL_HOST'),
+#         'PORT': os.environ.get('MY_SQL_PORT'),
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME':os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
